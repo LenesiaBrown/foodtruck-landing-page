@@ -44,3 +44,23 @@ git clone https://github.com/your-username/foodtruck-landing-page.git
 2. Open index.html in your browser
 
 3. Explore the responsive navigation and other sections
+
+
+---
+
+
+## Updates
+
+### Visual Improvements
+- Added a **hero image background** with an overlay to enhance the landing section  
+- Replaced placeholder icons with **real food images** in the menu cards
+
+### Navigation & Menu Styling
+- Updated the navigation bar to use a **glassmorphism (blur + transparency) effect** on mobile  
+- Applied the same glass effect to the **dropdown menu/sidebar** for a consistent design  
+- Improved menu icon and navbar text colours for better visibility on top of images  
+
+### UI Fixes
+- Adjusted colour behavior when scrolling to maintain readability  
+
+---
