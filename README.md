@@ -37,7 +37,7 @@
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/foodtruck-landing-page.git
+git clone https://github.com/LenesiaBrown/foodtruck-landing-page.git
 
 ```
 
