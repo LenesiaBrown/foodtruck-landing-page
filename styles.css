@@ -15,12 +15,6 @@ nav {
     background-color: transparent;
 }
 
-
-/* nav {
-    position: absolute;
-    background: transparent;
-} */
-
 nav.scrolled {
     position: fixed;
     background: white;
@@ -36,12 +30,6 @@ nav.scrolled {
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-
-/* why not working?!!? */
-.nav.scrolled.open .sidebar a {
-    color: white;
-}
-
 nav.scrolled .nav-title {
     -webkit-text-fill-color: initial;
     color: #ff6600;
@@ -51,7 +39,7 @@ nav.scrolled .nav-title {
     background: linear-gradient(90deg, #ff6600, #ff3300);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-weight: 20500;
+    font-weight: 900;
     padding-left: 5px;
 }
 
@@ -80,7 +68,7 @@ nav.scrolled .nav-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 20px;
+    padding: 0px 20px;
 }
 
 .nav-items {
@@ -289,29 +277,25 @@ nav.scrolled .nav-title {
 .favourites {
     display: flex;
     gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
+    overflow-x: auto; 
+    flex-wrap: nowrap; 
+    justify-content: flex-start; 
+    padding: 20px 20px 40px 20px; 
+    scroll-snap-type: x mandatory; 
+    -webkit-overflow-scrolling: touch; 
 }
 
 .item {
-    flex: 1 1 300px;
+    flex: 0 0 320px;
     max-width: 550px;
     min-width: 20px;
     background: white;
     padding: 0px 0px 20px 0px;
     margin: 15px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 16px;         
+    border: 2px solid #e5e7eb;    
+    scroll-snap-align: center;    
 }
-
-/* .menu-card-top-t {
-    background: linear-gradient(to top left, #FFC800 0%, #FF9900 100%);
-    border-radius: 12px 12px 0 0;
-    padding: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
 
 .menu-card-top {
     height: 200px;
@@ -371,12 +355,12 @@ nav.scrolled .nav-title {
 .location {
     flex: 1 1 300px;
     max-width: 300px;
-    min-width: 200px;
-    background: #fff7ed;
+    min-width: 200px;    
     padding: 50px;
     margin: 15px;
-    border-radius: 2px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background: white;
+    border-radius: 16px;         
+    border: 2px solid #e5e7eb;
 }
 
 @media (max-width: 600px) {
@@ -509,4 +493,37 @@ footer {
     font-size: 16px;
 }
 
+.favs {
+    background-color: white;
+    padding-bottom: 50px;    
+    border-bottom: 1px solid #eee;
+}
 
+.locate {
+    background-color: #f9fafb;
+    padding-bottom: 50px;
+}
+
+/* Show the scrollbar for desktop users */
+.favourites::-webkit-scrollbar {
+    display: block;      
+    height: 8px;        
+}
+
+.favourites::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+    margin: 0 100px;     /* Important: Pulls the bar in so it's centered, not edge-to-edge */
+}
+
+.favourites::-webkit-scrollbar-thumb {
+    background: #ccc;    
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+/* Make it pop when they hover */
+.favourites::-webkit-scrollbar-thumb:hover {
+    background: #ff6900;
+    cursor: pointer;
+}
