@@ -343,7 +343,8 @@ nav.scrolled .nav-title {
 .locate h2 {
     text-align: center;
     font-size: 30px;
-    margin-top: 50px;
+    margin-top: 0px;
+    padding-top: 50px;
 }
 
 .locations {
