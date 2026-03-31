@@ -294,11 +294,13 @@ nav.scrolled .nav-title {
     padding: 20px 20px 40px 20px; 
     scroll-snap-type: x mandatory; 
     -webkit-overflow-scrolling: touch; 
+    scrollbar-width: thin; 
+    scrollbar-color: #ff6900 #f1f1f1;
 }
 
 .item {
     flex: 0 0 85vw;
-    max-width: 550px;
+    max-width: 320px;
     min-width: 280px;
     background: white;
     padding: 0px 0px 20px 0px;
