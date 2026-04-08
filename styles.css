@@ -1,5 +1,6 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
 }
 
 html, body {
@@ -155,13 +156,14 @@ nav.scrolled .nav-title {
         color: white;
     }
 
-    .favourites::-webkit-scrollbar-thumb {
-        background: #ccc;
-        border-radius: 10px;
+    .favourites {
+        padding: 20px 10px;
     }
-    
-    .favourites::-webkit-scrollbar-track {
-        margin: 0 20px; /* Pull the bar in slightly from the screen edges */
+
+    .item {
+        flex: 0 0 85vw;
+        margin: 10px 5px;
+        scroll-snap-align: center;
     }
 
 }
@@ -290,24 +292,22 @@ nav.scrolled .nav-title {
     gap: 20px;
     overflow-x: auto; 
     flex-wrap: nowrap; 
-    /* justify-content: flex-start;  */
-    padding: 20px 20px 40px 20px; 
+    padding: 20px 20px 20px 20px;
     scroll-snap-type: x mandatory; 
     -webkit-overflow-scrolling: touch; 
-    scrollbar-width: thin; 
-    scrollbar-color: #ff6900 #f1f1f1;
 }
 
 .item {
-    flex: 0 0 85vw;
+    flex: 0 0 320px;
     max-width: 320px;
     min-width: 280px;
     background: white;
-    padding: 0px 0px 20px 0px;
-    margin: 15px;
+    padding: 0;
+    margin: 10px;
     border-radius: 16px;         
     border: 2px solid #e5e7eb;    
     scroll-snap-align: center;    
+    overflow: hidden;
 }
 
 .menu-card-top {
@@ -368,7 +368,7 @@ nav.scrolled .nav-title {
 
 .location {
     flex: 1 1 300px;
-    max-width: 300px;
+    max-width: 350px;
     min-width: 200px;    
     padding: 50px;
     margin: 15px;
@@ -520,14 +520,14 @@ footer {
 
 /* Show the scrollbar for desktop users */
 .favourites::-webkit-scrollbar {
-    display: block !important; 
-    height: 6px; /* A bit thinner for mobile */
+    display: block;      
+    height: 8px;        
 }
 
 .favourites::-webkit-scrollbar-track {
     background: #f1f1f1;
     border-radius: 10px;
-    margin: 0 100px;     /* Important: Pulls the bar in so it's centered, not edge-to-edge */
+    margin: 0 100px;
 }
 
 .favourites::-webkit-scrollbar-thumb {
@@ -536,20 +536,7 @@ footer {
     transition: background 0.3s;
 }
 
-/* Make it pop when they hover */
 .favourites::-webkit-scrollbar-thumb:hover {
     background: #ff6900;
     cursor: pointer;
-}
-
-/* ADD THIS: This makes the bar visible on mobile */
-@media (max-width: 768px) {
-    .favourites::-webkit-scrollbar-thumb {
-        background: #ccc; /* Or use #ff6900 if you want it orange on mobile too */
-        border-radius: 10px;
-    }
-    
-    .favourites::-webkit-scrollbar-track {
-        margin: 0 20px; /* Pull the bar in slightly from the screen edges */
-    }
 }
